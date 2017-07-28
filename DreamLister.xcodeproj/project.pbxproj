@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D18520461F27A8030006A49F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18520451F27A8030006A49F /* AppDelegate.swift */; };
-		D18520481F27A8030006A49F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18520471F27A8030006A49F /* ViewController.swift */; };
+		D18520481F27A8030006A49F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18520471F27A8030006A49F /* MainVC.swift */; };
 		D185204B1F27A8030006A49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18520491F27A8030006A49F /* Main.storyboard */; };
 		D185204E1F27A8030006A49F /* DreamLister.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D185204C1F27A8030006A49F /* DreamLister.xcdatamodeld */; };
 		D18520501F27A8030006A49F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D185204F1F27A8030006A49F /* Assets.xcassets */; };
 		D18520531F27A8030006A49F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18520511F27A8030006A49F /* LaunchScreen.storyboard */; };
 		D185205E1F27A8030006A49F /* DreamListerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185205D1F27A8030006A49F /* DreamListerTests.swift */; };
 		D18520691F27A8040006A49F /* DreamListerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18520681F27A8040006A49F /* DreamListerUITests.swift */; };
+		D185208A1F2923CC0006A49F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18520891F2923CC0006A49F /* MaterialView.swift */; };
+		D185208D1F2928590006A49F /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185208B1F2928590006A49F /* Item+CoreDataClass.swift */; };
+		D185208E1F2928590006A49F /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185208C1F2928590006A49F /* Item+CoreDataProperties.swift */; };
+		D18520901F292AFD0006A49F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185208F1F292AFD0006A49F /* ItemCell.swift */; };
+		D1FFB8551F296C31009B47DF /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFB8541F296C31009B47DF /* ItemDetailsVC.swift */; };
+		D1FFB8571F29737A009B47DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFB8561F29737A009B47DF /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,7 @@
 /* Begin PBXFileReference section */
 		D18520421F27A8030006A49F /* DreamLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18520451F27A8030006A49F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D18520471F27A8030006A49F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D18520471F27A8030006A49F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		D185204A1F27A8030006A49F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D185204D1F27A8030006A49F /* DreamLister.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamLister.xcdatamodel; sourceTree = "<group>"; };
 		D185204F1F27A8030006A49F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		D18520641F27A8040006A49F /* DreamListerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamListerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18520681F27A8040006A49F /* DreamListerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamListerUITests.swift; sourceTree = "<group>"; };
 		D185206A1F27A8040006A49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D18520891F2923CC0006A49F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		D185208B1F2928590006A49F /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D185208C1F2928590006A49F /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D185208F1F292AFD0006A49F /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		D1FFB8541F296C31009B47DF /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		D1FFB8561F29737A009B47DF /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +111,10 @@
 		D18520441F27A8030006A49F /* DreamLister */ = {
 			isa = PBXGroup;
 			children = (
+				D1FFB8531F296BEC009B47DF /* Controller */,
+				D1FFB8521F293B14009B47DF /* View */,
+				D18520861F27AF600006A49F /* Model */,
 				D18520451F27A8030006A49F /* AppDelegate.swift */,
-				D18520471F27A8030006A49F /* ViewController.swift */,
 				D18520491F27A8030006A49F /* Main.storyboard */,
 				D185204F1F27A8030006A49F /* Assets.xcassets */,
 				D18520511F27A8030006A49F /* LaunchScreen.storyboard */,
@@ -126,6 +140,43 @@
 				D185206A1F27A8040006A49F /* Info.plist */,
 			);
 			path = DreamListerUITests;
+			sourceTree = "<group>";
+		};
+		D18520861F27AF600006A49F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D185208B1F2928590006A49F /* Item+CoreDataClass.swift */,
+				D185208C1F2928590006A49F /* Item+CoreDataProperties.swift */,
+				D18520871F27AF650006A49F /* Generated */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D18520871F27AF650006A49F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		D1FFB8521F293B14009B47DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D18520891F2923CC0006A49F /* MaterialView.swift */,
+				D1FFB8561F29737A009B47DF /* CustomTextField.swift */,
+				D185208F1F292AFD0006A49F /* ItemCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D1FFB8531F296BEC009B47DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D18520471F27A8030006A49F /* MainVC.swift */,
+				D1FFB8541F296C31009B47DF /* ItemDetailsVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +247,7 @@
 				TargetAttributes = {
 					D18520411F27A8030006A49F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = E2T7T7WYNN;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					D18520581F27A8030006A49F = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -265,9 +315,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D18520481F27A8030006A49F /* ViewController.swift in Sources */,
+				D185208E1F2928590006A49F /* Item+CoreDataProperties.swift in Sources */,
+				D185208D1F2928590006A49F /* Item+CoreDataClass.swift in Sources */,
+				D18520481F27A8030006A49F /* MainVC.swift in Sources */,
 				D18520461F27A8030006A49F /* AppDelegate.swift in Sources */,
+				D1FFB8551F296C31009B47DF /* ItemDetailsVC.swift in Sources */,
+				D18520901F292AFD0006A49F /* ItemCell.swift in Sources */,
 				D185204E1F27A8030006A49F /* DreamLister.xcdatamodeld in Sources */,
+				D185208A1F2923CC0006A49F /* MaterialView.swift in Sources */,
+				D1FFB8571F29737A009B47DF /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,11 +477,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E2T7T7WYNN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DreamLister/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.AppITWorks.DreamLister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -434,11 +491,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E2T7T7WYNN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DreamLister/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.AppITWorks.DreamLister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -520,6 +578,7 @@
 				D185206F1F27A8040006A49F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D18520701F27A8040006A49F /* Build configuration list for PBXNativeTarget "DreamListerTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +587,7 @@
 				D18520721F27A8040006A49F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D18520731F27A8040006A49F /* Build configuration list for PBXNativeTarget "DreamListerUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +596,7 @@
 				D18520751F27A8040006A49F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
