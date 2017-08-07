@@ -20,6 +20,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     
     var stores = [Store]()
+    var typesOfItem = [ItemType]()
     var itemToEdit: Item?
     var imagePicker: UIImagePickerController!
     
@@ -42,6 +43,14 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         // fetch stores
         getStores()
+
+        // fetch item types
+        getItemTypes()
+        
+        // create a test data of item types
+//        generateItemTypeTestData()
+        
+        
         
         // when item is passed from main view to detail view
         if itemToEdit != nil {
@@ -51,16 +60,33 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let store = stores[row]
-        return store.name
+        
+//        let store = stores[row]
+//        return store.name
+
+        if component == 0 {
+            let store = stores[row]
+            return store.name
+        } else {
+            let itemType = typesOfItem[row]
+            return itemType.type
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stores.count
+//        return stores.count
+
+        if component == 0 {
+            return stores.count
+        } else {
+            return typesOfItem.count
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1    // only one column in picker
+//        return 1    // only one column in picker
+        return 2        // column 0 for store and
+                        // column 1 for itemtype
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -90,12 +116,42 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         do {
             self.stores = try context.fetch(fetchRequest)
-            self.storePicker.reloadAllComponents()
-            
+            //self.storePicker.reloadAllComponents()
+            self.storePicker.reloadComponent(0)     // instead reload store in 1st column
         } catch {
             // handle the error
         }
     }
+
+    func generateItemTypeTestData()
+    {
+        let itemType = ItemType(context: context)
+        itemType.type = "Auto"
+        let itemType1 = ItemType(context: context)
+        itemType1.type = "Electronic"
+        let itemType2 = ItemType(context: context)
+        itemType2.type = "Furniture"
+        let itemType3 = ItemType(context: context)
+        itemType3.type = "Travel"
+        let itemType4 = ItemType(context: context)
+        itemType4.type = "Misc"
+        
+        ad.saveContext()
+        print("Saved test item type data for the picker")
+    }
+
+    func getItemTypes() {
+        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+        
+        do {
+            self.typesOfItem = try context.fetch(fetchRequest)
+            //self.storePicker.reloadAllComponents()
+            self.storePicker.reloadComponent(1)             // reload item type in 2nd column
+        } catch {
+            // handle the error
+        }
+    }
+
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         
@@ -127,6 +183,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
         
+        item.toItemType = typesOfItem[storePicker.selectedRow(inComponent: 1)]
+        
         ad.saveContext()
         
         navigationController?.popViewController(animated: true)
@@ -140,18 +198,47 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             detailsField.text = item.details
             thumbImage.image = item.toImage?.image as? UIImage
             
+            // correctly fetch store name for picker (column 0 as store)
             if let store = item.toStore {
                 var index = 0
                 repeat {
                     let s = stores[index]
                     if s.name == store.name {
                         storePicker.selectRow(index, inComponent: 0, animated: false)
+                        
+                        // correctly fetch item type for picker (column 1 as item type)
+                        if let type = item.toItemType {
+                            var index = 0
+                            repeat {
+                                let itmType = typesOfItem[index]
+                                if itmType.type == type.type {
+                                    storePicker.selectRow(index, inComponent: 1, animated: false)
+                                    break;
+                                }
+                                index += 1
+                            } while (index < typesOfItem.count)
+                        }
+
+                        
                         break
                     }
                     index += 1
                     
                 } while (index < stores.count)
             }
+            
+//            // correctly fetch item type for picker (column 1 as item type)
+//            if let type = item.toItemType {
+//                var index = 0
+//                repeat {
+//                    let itmType = typesOfItem[index]
+//                    if itmType.type == type.type {
+//                        storePicker.selectRow(index, inComponent: 1, animated: false)
+//                        break;
+//                    }
+//                    index += 1
+//                } while (index < typesOfItem.count)
+//            }
         }
     }
     
